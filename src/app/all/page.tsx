@@ -1,10 +1,7 @@
 "use client";
 import styles from "./page.module.scss";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import CustomPost from "../../components/CustomPost/CustomPost";
-import { IconButton, TextField } from "@mui/material";
-import SavedSearchOutlinedIcon from "@mui/icons-material/SavedSearchOutlined";
-import CustomButton from "@/components/CustomButton/CustomButton";
 
 const All = () => {
   const [data, setData] = useState(null);

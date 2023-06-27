@@ -1,3 +1,5 @@
+@import "../../app/mixins";
+
 .container {
   height: 50px;
   font-size: 14px;
@@ -6,6 +8,10 @@
   justify-content: space-between;
   padding: 0 50px;
   box-shadow: 0 -3px 15px -2px gray;
+  @include useMobile {
+    padding: 0 10px;
+    font-size: 12px;
+  }
 }
 .social {
   display: flex;

@@ -1,3 +1,5 @@
+@import "../../app/mixins";
+
 .container {
   width: 42px;
   height: 24px;
@@ -13,6 +15,9 @@
 
 .icon {
   font-size: 12px;
+  @include useMobile {
+    font-size: 10px;
+  }
 }
 
 .ball {

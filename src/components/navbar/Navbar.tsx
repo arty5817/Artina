@@ -13,14 +13,13 @@ import {
   IconButton,
   List,
   ListItem,
-  ListItemText,
   Tooltip,
 } from "@mui/material";
 import { signOut, useSession } from "next-auth/react";
-import { isMobile } from "react-device-detect";
 import MenuRoundedIcon from "@mui/icons-material/MenuRounded";
 import { useState } from "react";
 import CancelPresentationOutlinedIcon from "@mui/icons-material/CancelPresentationOutlined";
+import { Device } from "@/components/Device";
 
 const links = [
   {
@@ -53,6 +52,11 @@ const Navbar = () => {
 
   const handleSignOut = () => {
     signOut().then(() => router.push("/"));
+    setOpen(false);
+  };
+  const handleProfileMobile = () => {
+    setOpen(false);
+    router.push("/profile");
   };
 
   return (
@@ -60,7 +64,7 @@ const Navbar = () => {
       <Link href="/" className={styles.logo}>
         <Image priority={true} src={logo} alt={logo} className={styles.img} />
       </Link>
-      {isMobile ? (
+      <Device mobile>
         <div className={styles.mobileNav}>
           <CustomButton secondary onClick={() => setOpen(true)}>
             <MenuRoundedIcon />
@@ -84,6 +88,20 @@ const Navbar = () => {
                 </IconButton>
                 <DarkModeToggle onClick={() => setOpen(false)} />
               </ListItem>
+              {status === "authenticated" && (
+                <Avatar
+                  sx={{
+                    margin: "auto",
+                    border: 1,
+                    marginY: 3,
+                    width: 90,
+                    height: 90,
+                  }}
+                  onClick={handleProfileMobile}
+                  variant="square"
+                  src={status === "authenticated" ? session.user.image : ""}
+                />
+              )}
               {links.map((link) => (
                 <ListItem
                   key={link.id}
@@ -103,9 +121,35 @@ const Navbar = () => {
                 </ListItem>
               ))}
             </List>
+            <Box>
+              {status === "unauthenticated" || status === "loading" ? (
+                <CustomButton
+                  sx={{
+                    marginX: "46px",
+                    marginY: 3,
+                  }}
+                  camel
+                  onClick={handleProfileMobile}
+                >
+                  Dashboard
+                </CustomButton>
+              ) : (
+                <CustomButton
+                  sx={{
+                    marginX: "46px",
+                    marginY: 3,
+                  }}
+                  secondary
+                  onClick={handleSignOut}
+                >
+                  Log Out
+                </CustomButton>
+              )}
+            </Box>
           </Drawer>
         </div>
-      ) : (
+      </Device>
+      <Device desktop>
         <div className={styles.links}>
           <DarkModeToggle />
           {links.map((link) => (
@@ -143,7 +187,7 @@ const Navbar = () => {
             )}
           </Box>
         </div>
-      )}
+      </Device>
     </div>
   );
 };

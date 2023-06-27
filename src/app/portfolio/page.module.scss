@@ -2,6 +2,9 @@
 
 .container {
   padding: 0 30px;
+  @include useMobile {
+    padding: 0 10px;
+  }
 }
 .mainTitle {
   font-size: 50px;
