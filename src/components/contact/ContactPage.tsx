@@ -115,8 +115,8 @@ const ContactPage = () => {
 
           <OrbitControls
             autoRotate={true}
-            enableZoom={isMobile}
-            enablePan={isMobile}
+            enableZoom={false}
+            enablePan={false}
             enableRotate={true}
           />
         </Canvas>
