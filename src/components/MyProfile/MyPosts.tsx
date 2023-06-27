@@ -16,9 +16,9 @@ const MyPosts = () => {
   const randomIntFromInterval = (min, max) => {
     return Math.floor(Math.random() * (max - min + 1) + min);
   };
-  const randomPage = randomIntFromInterval(1, 999);
 
   useEffect(() => {
+    const randomPage = randomIntFromInterval(1, 999);
     fetch(
       `https://api.pexels.com/v1/curated?page=${randomPage}&per_page=8
   `,
@@ -32,7 +32,7 @@ const MyPosts = () => {
     )
       .then((response) => response.json())
       .then((data) => setData(data.photos));
-  }, [randomPage]);
+  }, []);
 
   return (
     <div className={styles.profilePostContainer}>
