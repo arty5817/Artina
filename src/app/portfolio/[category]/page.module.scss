@@ -1,0 +1,42 @@
+@import "../../../app/mixins";
+
+.headContainer {
+  padding: 0 50px;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  h1 {
+    text-transform: uppercase;
+    color: #53c28b;
+    letter-spacing: 0.4rem;
+  }
+  @include useMobile {
+    justify-content: center;
+  }
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: 50px 0;
+  @include useMobile {
+    flex-direction: column;
+    margin: 20px 0;
+  }
+}
+
+.post {
+  width: 50%;
+  @include useMobile {
+    width: 100%;
+  }
+}
+
+.pagination {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 40px;
+}

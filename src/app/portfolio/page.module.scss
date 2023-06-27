@@ -1,0 +1,35 @@
+@import "../../app/mixins";
+
+.container {
+  padding: 0 30px;
+}
+.mainTitle {
+  font-size: 50px;
+  padding: 30px 50px;
+  letter-spacing: 3px;
+  @include useMobile {
+    text-align: center;
+    font-size: 38px;
+  }
+}
+
+.selectTitle {
+  margin: 20px;
+  color: #53c28b;
+  letter-spacing: 0.4rem;
+  @include useMobile {
+    text-align: center;
+    font-size: 21px;
+  }
+}
+
+.galleryContain {
+  display: flex;
+  justify-content: space-between;
+
+  @include useMobile {
+    flex-direction: column;
+    width: 100%;
+  }
+}
+//

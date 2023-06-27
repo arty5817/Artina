@@ -1,0 +1,67 @@
+@import "../../app/mixins";
+
+.container {
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 20px -2px gray;
+  padding: 0 50px;
+  @include useMobile {
+    padding: 0;
+  }
+}
+.logo {
+  width: 100px;
+  height: inherit;
+  font-weight: bold;
+  font-size: 22px;
+  .img {
+    width: inherit;
+    height: inherit;
+    object-fit: contain;
+  }
+}
+.links {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  text-transform: uppercase;
+  transition: 0.3s;
+  .link {
+    &:hover {
+      color: #53c28b;
+    }
+  }
+  .active {
+    color: #53c28b;
+  }
+}
+.mobileNav {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+}
+.mobileLink {
+  width: 100%;
+  padding: 10px 30px;
+  text-transform: uppercase;
+}
+.mobileActive {
+  color: #53c28b;
+  text-transform: uppercase;
+  padding: 10px 30px;
+}
+.menuHead {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid black;
+  button {
+    color: #53c28b;
+  }
+}
+.menuItems {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}

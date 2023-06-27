@@ -1,0 +1,59 @@
+@import "../../app/mixins";
+
+.mainTitle {
+  font-size: 50px;
+  padding: 0 50px;
+}
+
+.postContainer {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+  margin: 10px 50px;
+  border: 1px solid gray;
+  transition: 0.3s;
+  &:hover {
+    box-shadow: 0 0 8px 1px #53c28b;
+  }
+  @include useMobile {
+    flex-direction: column;
+    overflow: hidden;
+    margin: 20px 10px;
+  }
+}
+
+.imageContainer {
+  display: flex;
+  align-items: center;
+}
+
+.image {
+  object-fit: cover;
+}
+
+.content {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+  @include useMobile {
+    width: 100%;
+  }
+  .postProfile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 17px;
+  }
+}
+
+.title {
+  margin-bottom: 10px;
+}
+
+.desc {
+  font-size: 18px;
+  color: #999;
+}

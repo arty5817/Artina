@@ -1,0 +1,63 @@
+.content {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 2px 14px 2px gray;
+}
+
+.contentOverlay {
+  position: absolute;
+  height: 100px;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  opacity: 1;
+  -webkit-transition: all 0.4s ease-in-out 0s;
+  -moz-transition: all 0.4s ease-in-out 0s;
+  transition: all 0.4s ease-in-out 0s;
+}
+
+.contentImage {
+  width: 100%;
+  object-fit: cover;
+}
+
+.contentDetails {
+  position: absolute;
+  text-align: center;
+  padding: 1em;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  opacity: 1;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  -webkit-transition: all 0.3s ease-in-out 0s;
+  -moz-transition: all 0.3s ease-in-out 0s;
+  transition: all 0.3s ease-in-out 0s;
+  background-color: rgba(0, 0, 0, 0.45);
+}
+
+.content:hover .contentDetails {
+  top: -80%;
+  left: 50%;
+  opacity: 1;
+}
+
+.contentDetails h3 {
+  color: #fff;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  margin-bottom: 0.5em;
+  text-transform: uppercase;
+}
+
+.contentDetails p {
+  color: #fff;
+  font-size: 0.8em;
+}
+
+.fadeInBottom {
+  top: 80%;
+}

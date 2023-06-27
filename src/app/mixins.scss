@@ -1,0 +1,15 @@
+@mixin useMobile {
+  @media (max-width: 767px) {
+    @content;
+  }
+}
+@mixin useTab {
+  @media (max-width: 931px) {
+    @content;
+  }
+}
+@mixin useDesktop {
+  @media (min-width: 1200px) {
+    @content;
+  }
+}

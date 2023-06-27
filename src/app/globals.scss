@@ -1,0 +1,87 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  background-color: #111;
+  color: #bbb;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.theme {
+  transition: 1s all ease;
+  .MuiInputBase-root {
+    &.MuiOutlinedInput-root {
+      &.Mui-focused fieldset {
+        border-color: #53c28b;
+      }
+    }
+  }
+}
+
+.light {
+  background-color: white;
+  color: #111;
+
+  .MuiFormLabel-root {
+    color: #111;
+  }
+
+  .MuiButtonBase-root {
+    &.secondary {
+      color: #111111;
+    }
+  }
+}
+
+.dark {
+  background-color: #111;
+  color: #bbb;
+
+  .MuiInputBase-root {
+    color: #bbb;
+    &:hover > .MuiOutlinedInput-notchedOutline {
+      border-color: rgba(83, 194, 139, 0.75);
+    }
+  }
+  .MuiFormLabel-root {
+    color: #bbb;
+  }
+  .MuiOutlinedInput-notchedOutline {
+    border-color: rgba(83, 194, 139, 0.44);
+  }
+  .MuiCheckbox-root {
+    .MuiSvgIcon-root {
+      color: #53c28b;
+    }
+  }
+  .MuiIconButton-root {
+    color: #bbb;
+  }
+
+  .MuiPaginationItem-root {
+    border: 1px solid #53c28b;
+    color: white;
+    &.Mui-selected {
+      background-color: rgba(83, 194, 139, 0.41);
+    }
+  }
+}
+
+.container {
+  max-width: 100%;
+  min-height: 100vh;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}

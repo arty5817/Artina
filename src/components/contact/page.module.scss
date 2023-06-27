@@ -1,0 +1,52 @@
+@import "../../app/mixins";
+
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 50px;
+  flex-direction: row;
+  @include useMobile {
+    flex-direction: column-reverse;
+  }
+}
+
+.formContainer {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @include useMobile {
+    padding: 20px;
+  }
+
+  .form {
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    @include useMobile {
+      padding: 10px;
+    }
+    .title {
+      font-weight: 100;
+    }
+    .input {
+      padding: 20px;
+      background-color: #e8e8e8;
+      outline: none;
+      border: 3px inset #53c28b;
+      border-radius: 10px;
+    }
+  }
+}
+
+.mapContainer {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  button {
+    margin: auto;
+  }
+}
