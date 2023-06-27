@@ -13,6 +13,10 @@ import { isMobile } from "react-device-detect";
 
 const MyPosts = () => {
   const [data, setData] = useState(null);
+  const randomIntFromInterval = (min, max) => {
+    return Math.floor(Math.random() * (max - min + 1) + min);
+  };
+  const randomPage = randomIntFromInterval(1, 999);
 
   useEffect(() => {
     fetch(
@@ -28,12 +32,7 @@ const MyPosts = () => {
     )
       .then((response) => response.json())
       .then((data) => setData(data.photos));
-  }, []);
-
-  function randomIntFromInterval(min, max) {
-    return Math.floor(Math.random() * (max - min + 1) + min);
-  }
-  const randomPage = randomIntFromInterval(1, 999);
+  }, [randomPage]);
 
   return (
     <div className={styles.profilePostContainer}>
