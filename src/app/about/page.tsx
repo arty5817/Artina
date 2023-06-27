@@ -26,8 +26,8 @@ const About = () => {
         <div className={styles.item}>
           <h1>Who Are We?</h1>
           <p className={styles.desc}>
-            Somehow you may ask who are we but its just for fun I'm working
-            alone right now my name is Arthur and I'm the developer and designer
+            Somehow you may ask who are we but its just for fun I`m working
+            alone right now my name is Arthur and I`m the developer and designer
             of this beautiful site ( google also had part in this project lol )
             soo idk what to tell you this is a beautiful test project if you
             love it just send me your opinion via contact page.

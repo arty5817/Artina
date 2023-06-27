@@ -29,7 +29,7 @@ const Category = ({ params }) => {
     )
       .then((response) => response.json())
       .then((data) => setData(data.photos));
-  }, [page]);
+  }, [page, params.category]);
 
   return (
     <>
@@ -42,7 +42,7 @@ const Category = ({ params }) => {
       <Suspense fallback={null}>
         <div className={styles.container}>
           {data?.map(({ id, src, photographer, alt }: PostProps) => (
-            <div className={styles.post}>
+            <div key={id} className={styles.post}>
               <CustomPost
                 key={id}
                 id={id}
