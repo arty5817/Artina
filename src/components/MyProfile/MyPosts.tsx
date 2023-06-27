@@ -13,14 +13,10 @@ import { isMobile } from "react-device-detect";
 
 const MyPosts = () => {
   const [data, setData] = useState(null);
-  const randomIntFromInterval = (min, max) => {
-    return Math.floor(Math.random() * (max - min + 1) + min);
-  };
 
   useEffect(() => {
-    const randomPage = randomIntFromInterval(1, 999);
     fetch(
-      `https://api.pexels.com/v1/curated?page=${randomPage}&per_page=8
+      `https://api.pexels.com/v1/curated?page=580&per_page=8
   `,
       {
         cache: "no-store",
@@ -33,6 +29,7 @@ const MyPosts = () => {
       .then((response) => response.json())
       .then((data) => setData(data.photos));
   }, []);
+
 
   return (
     <div className={styles.profilePostContainer}>
