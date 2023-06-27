@@ -43,10 +43,12 @@
 
 .mapContainer {
   flex: 1;
+  height: inherit;
   display: flex;
   align-items: center;
   justify-content: center;
-  button {
-    margin: auto;
+  @include useMobile {
+    flex: none;
+    height: 600px;
   }
 }

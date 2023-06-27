@@ -7,6 +7,7 @@ import { Html, OrbitControls, Stage, useProgress } from "@react-three/drei";
 import Phone from "@/components/iPhone14 Model/Phone";
 import { TextField } from "@mui/material";
 import emailjs from "@emailjs/browser";
+import { isMobile } from "react-device-detect";
 
 function Loader() {
   const { progress } = useProgress();
@@ -32,7 +33,6 @@ const ContactPage = () => {
   const [message, setMessage] = useState("");
   const [showDone, setShowDone] = useState(false);
   const [disabled, setDisabled] = useState(false);
-  const [rotate, setRotate] = useState(2.0);
 
   const sendEmail = (e) => {
     e.preventDefault();
@@ -115,9 +115,8 @@ const ContactPage = () => {
 
           <OrbitControls
             autoRotate={true}
-            autoRotateSpeed={rotate}
-            enableZoom={false}
-            enablePan={false}
+            enableZoom={isMobile}
+            enablePan={isMobile}
             enableRotate={true}
           />
         </Canvas>
